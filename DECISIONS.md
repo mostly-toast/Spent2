@@ -35,3 +35,8 @@ Format: `D-NNN · date · status`. Status: Accepted, Superseded by D-NNN.
 
 ## D-008 · 2026-10-02 · Accepted: Kotlin only
 **Rejected:** mixing Java in. **Why:** nothing gained, and the agent would mix both.
+
+## D-009 · 2026-10-02 · Accepted: INR accounts with running balances
+**Chosen:** amounts use INR `Long` paise. An account is created with an opening balance and maintains a running current balance as its transactions change.
+**Rejected:** multi-currency support and opening-balance-only accounts with no maintained current balance.
+**Why:** the app is for Indian bank and UPI SMS, and users need the current balance per account.

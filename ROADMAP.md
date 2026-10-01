@@ -2,7 +2,7 @@
 
 **Rules:** one phase active at a time. Scope is frozen when a phase starts. Direction changes happen only between phases, are written down first, and get a git tag at each phase boundary (`phase-0-done`, ...).
 
-**Active phase:** 0
+**Active phase:** 1
 
 ## Phase 0: Skeleton
 - Android Studio wizard project (Empty Activity, Compose), then split into `:core` (Kotlin/JVM) and `:app`.
@@ -15,7 +15,6 @@
 - `:core` models: Account, Category, Transaction (money as paise). Repository interfaces.
 - `:app` data layer: Room entities, DAOs, mappers, repository implementations. Room is the single source of truth; repositories return Flows of `:core` models. Seed default categories. Add the indexes from ARCHITECTURE.md §12.
 - Plain screens (one ViewModel each, a single `uiState`) to add and list accounts and transactions manually.
-- Needs decided first: opening balance (SPEC #4), currency (#6).
 - Done when: manual add/edit/delete works end to end; `:core` tests pass.
 
 ## Phase 2: SMS pipeline in `:core` (no Android)

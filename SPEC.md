@@ -8,7 +8,7 @@ A privacy-first, local-only Android app that tracks income, expenses and transfe
 ## 2. Principles (non-negotiable)
 1. **Local only.** No INTERNET permission, no analytics, no ads, no accounts, no cloud backup. [C]
 2. **Logic before looks.** Features are built and tested in `:core` first. UI stays plain stock Material3 until the Polish phase.
-3. **Money is `Long` paise.** Never Double/Float. [C]
+3. **Money is INR `Long` paise.** Never Double/Float. [C]
 4. **Scope is frozen per phase.** New ideas go to `PARKING_LOT.md`, not into code.
 5. **Layered architecture.** UI, optional domain, data; Room is the single source of truth; the UI never touches the database directly. Details in `ARCHITECTURE.md`; reasons in `DECISIONS.md`.
 6. **Efficient by design.** SMS import is batched, off the main thread, resumable and idempotent (re-importing creates no duplicates). Totals are computed in SQL.
@@ -16,8 +16,7 @@ A privacy-first, local-only Android app that tracks income, expenses and transfe
 ## 3. Features
 
 ### F1 Accounts management [C]
-User adds their accounts (name, bank, type, last 4 digits used to match SMS). Required for SMS-to-account mapping and for transfer detection.
-- [?] Opening balance / balance tracking.
+User adds their accounts (name, bank, type, last 4 digits used to match SMS, opening balance). Required for SMS-to-account mapping and for transfer detection. Each account maintains a running current balance from its transactions. [C]
 
 ### F2 Transactions [C]
 Types: Income, Expense, Transfer. Fields: amount (paise), type, account, category, date-time, counterparty/merchant, reference number, note, source (SMS or MANUAL), original SMS id.
@@ -62,6 +61,4 @@ Networking of any kind, login, cloud sync, analytics, ads, multi-device, multi-c
 | 1 | Auto-binning rule design | Phase 4 |
 | 2 | Distribution: sideload vs Play Store (SMS permission policy is restrictive; verify before assuming publish) | Phase 3 |
 | 3 | Budget shape (period, rollover, alerts) | Phase 4 |
-| 4 | Opening balance / balance tracking | Phase 1 |
 | 5 | Reminder trigger condition and time | Phase 3 |
-| 6 | Currency: INR only assumed | Phase 1 |
