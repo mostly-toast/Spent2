@@ -20,10 +20,17 @@ User adds their accounts (name, bank, type, last 4 digits used to match SMS, ope
 
 ### F2 Transactions [C]
 Types: Income, Expense, Transfer. Fields: amount (paise), type, account, category, date-time, counterparty/merchant, reference number, note, source (SMS or MANUAL), original SMS id.
-- Manual add / edit / delete. [P]
+- Manual add / edit / delete. [C]
 
 ### F3 Categories [C]
-Each category has a type: Income, Expense or Transfer. Default set seeded on first run; user can add, edit, archive. [P for defaults/editing]
+Each category has a type: Income, Expense or Transfer. Default set seeded on first run; user can add, edit, archive. [P for editing]
+The first-run defaults are exactly: expense: Food, Travel, Shopping, Bills & Utilities, Health, Education, Entertainment, Other Expense; income: Salary, Grants, Interest, Freelance, Other Income. Transfers have no category. [C]
+
+### Phase 1 manual-entry decisions [C]
+- INR is the only currency. Account bank and type are free text; account last four digits are required and exactly four digits.
+- Account IDs are UUID strings. Deletion is blocked while any transaction references the account.
+- Income and expense require a category; transfers have no category and require distinct source and destination accounts.
+- Account creation persists opening and current balances. Transaction create, edit, and delete atomically apply or reverse the affected account balance changes.
 
 ### F4 Budgets [C]
 - [?] Period (monthly assumed), per-category vs overall, rollover, alerts.

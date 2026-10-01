@@ -40,3 +40,8 @@ Format: `D-NNN · date · status`. Status: Accepted, Superseded by D-NNN.
 **Chosen:** amounts use INR `Long` paise. An account is created with an opening balance and maintains a running current balance as its transactions change.
 **Rejected:** multi-currency support and opening-balance-only accounts with no maintained current balance.
 **Why:** the app is for Indian bank and UPI SMS, and users need the current balance per account.
+
+## D-010 · 2026-10-02 · Accepted: Phase 1 manual transaction invariants
+**Chosen:** account IDs are UUID strings; last-four account digits are required and exactly four digits; account deletion is blocked while referenced by transactions. Income and expense require a category. Transfers have no category, require two different accounts, and atomically debit the source and credit the destination. Editing or deleting a transaction atomically reverses its former balance effect before applying a replacement effect.
+**Rejected:** nullable/unchecked account match digits, categorised transfers, and deleting referenced accounts.
+**Why:** these rules preserve reliable future SMS matching and account-balance integrity.

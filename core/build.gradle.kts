@@ -5,11 +5,14 @@ plugins {
 }
 
 kotlin {
+    jvmToolchain(11)
     compilerOptions {
         jvmTarget.set(JvmTarget.JVM_11)
     }
 }
 
 dependencies {
+    implementation(libs.kotlinx.coroutines.core)
     testImplementation(libs.kotlin.test)
+    testImplementation(libs.junit)
 }
