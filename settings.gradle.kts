@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Spent"
 include(":app")
+include(":core")
