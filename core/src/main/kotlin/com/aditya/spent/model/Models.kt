@@ -1,8 +1,12 @@
 package com.aditya.spent.model
 
+import java.time.Instant
+
 enum class TransactionType { INCOME, EXPENSE, TRANSFER }
 
 enum class TransactionSource { MANUAL, SMS }
+
+enum class ParsedDirection { DEBIT, CREDIT }
 
 data class Account(
     val id: String,
@@ -34,6 +38,46 @@ data class Transaction(
     val note: String? = null,
     val source: TransactionSource = TransactionSource.MANUAL,
     val originalSmsId: String? = null,
+    val balanceAfterPaise: Long? = null,
+    val senderHeader: String? = null,
+    val smsHash: String? = null,
+    val needsReview: Boolean = false,
+    val transferId: String? = null,
+)
+
+data class RawSms(
+    val id: String,
+    val sender: String,
+    val body: String,
+    val timestampMillis: Long,
+)
+
+data class ParsedTransaction(
+    val amountPaise: Long,
+    val direction: ParsedDirection,
+    val accountDigits: String?,
+    val merchant: String?,
+    val timestamp: Instant,
+    val referenceNumber: String?,
+    val balancePaise: Long?,
+    val availableBalancePaise: Long?,
+    val rawText: String,
+)
+
+enum class ReviewReason {
+    UNKNOWN_SENDER,
+    UNPARSEABLE,
+    NO_ACCOUNT_MATCH,
+    AMBIGUOUS_ACCOUNT,
+    AMBIGUOUS_TRANSFER,
+}
+
+data class ReviewItem(
+    val id: String,
+    val rawSms: RawSms,
+    val reason: ReviewReason,
+    val candidate: ParsedTransaction?,
+    val createdAt: Instant,
 )
 
 object Money {

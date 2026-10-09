@@ -13,4 +13,5 @@ Format: `- [date] idea (where it came from)`
 - (add here)
 
 ## Other ideas
+- [2026-10-04] Optional on-device extractor model (tagging/NER style, bundled, no network). Only if the go/no-go test in DECISIONS D-017 says the rules are failing too often.
 - (add here)

@@ -21,7 +21,18 @@ interface CategoryRepository {
 interface TransactionRepository {
     fun observeTransactions(): Flow<List<Transaction>>
     suspend fun getTransaction(id: String): Transaction?
+    suspend fun findBySmsHash(smsHash: String): Transaction?
+    suspend fun findByReference(accountId: String, referenceNumber: String): Transaction?
+    suspend fun findByAccountAmountAndWindow(
+        accountId: String,
+        type: TransactionType,
+        amountPaise: Long,
+        fromMillis: Long,
+        toMillis: Long,
+    ): List<Transaction>
     suspend fun add(transaction: Transaction): Result<Unit>
     suspend fun update(transaction: Transaction): Result<Unit>
     suspend fun delete(id: String): Result<Unit>
+    suspend fun markNeedsReview(id: String): Result<Unit>
+    suspend fun saveTransfer(newLeg: Transaction, existingLeg: Transaction?, transfer: Transaction): Result<Unit>
 }

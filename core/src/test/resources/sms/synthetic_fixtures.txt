@@ -1,0 +1,178 @@
+# Synthetic SMS fixtures for testing - NOT real messages
+# Format: sender|timestamp_millis|body
+
+ICICIT|1696204800000|ICICI Bank Acct XX943 debited for Rs 340.00 on 03-Oct-26; ASHOKA ENTERPRI credited. UPI:626639807621
+
+ICICIT|1696204860000|ICICI Bank Acct XX848 debited for Rs 125.00 on 03-Oct-26; Shri Sai super credited. UPI:347627280987
+
+ICICIT|1696118400000|Dear Customer, Acct XX658 is credited with Rs 2728.00 on 02-Oct-26 from SURYAA VISHAL J. UPI:601125936107-ICICI Bank
+
+MAHABK|1696032000000|A/c X7095 credited with Rs. 3300.00 on 30-Sep-26 from SWAAMI ATUL ROR RRN: 663456743272 -Bank of Maharashtra
+
+MAHABK|1696032000000|Your a/c xxxx 7535 has been credited by INR 617.50 on 01-OCT-2026 by APB Credit Through PFMS A09720063E406. A/c Bal is INR 33,846.94 CR
+
+MAHABK|1693622400000|A/c X7095 debited by Rs. 1270.00 for UPI payment to SHRI GAJANAN IC on 02-Aug-26. RRN: 658030981525 -Bank of Maharashtra
+
+--- ICICIT/001.txt  [JK-ICICIT-S]
+ICICI Bank Acc XX391 is credited with salary of Rs. 76,907.43 on 30-Sep-26. Info: RAVI KUMAR T-JDRQR73170. The Avl Bal Rs. 25,000.80.
+
+--- MAHABK/002.txt  [AX-MAHABK-S]
+UPI LITE Top-up amounting to Rs. 474.06  has been successful. RRN : 636083778353 - Bank of Maharashtra
+
+--- ICICIT/003.txt  [JD-ICICIT-S]
+Congratulations on activating ICICI Bank iMobile! If not activated, call 18001080. As a security measure, txn limit for first 24 hours is Rs 91,241.
+
+--- MAHABK/004.txt  [JM-MAHABK-S]
+Dear Customer, Due to Anita Deshmukh, PMJJBY/PMSBY premium was not debited from your account. Kindly maintain balance of Rs.686 for PMJJBY / Rs.93 for PMSBY for re-initiation of debit. If the premium is not debited before 30/05/2026 the policy will be discontinued as per scheme guidelines - Bank of Maharashtra
+
+--- MAHABK/005.txt  [VM-MAHABK-S]
+INR 17.36 was spent on your ATM Card No. ending XXXX 549 ORACLE  SINGAPORE on  05-JAN-2026 . A/c No xx 8869 Bal is INR 7,258.51 CR and AVL Bal is INR 7,258.51-Bank of Maharashtra
+
+--- MAHABK/006.txt  [JM-MAHABK-S]
+Your a/c xxxx 8869 has been credited by INR 722.83 on 01-OCT-2026 by APB Credit Through PFMS  Q91286570R049. A/c Bal is INR 13,883.68 CR and AVL Bal is INR 69,574.89-Bank of Maharashtra
+
+--- MAHABK/007.txt  [JM-MAHABK-S]
+Your A/c No xx 8869  has been credited by INR 93,867.56 on 28-SEP-2026 by MOHD IRFAN S 168288360759 from SUNITA PATIL. A/c Bal is INR 60,889.95 CR and AVL Bal INR 89,032.89-Bank of Maharashtra
+
+--- ICICIT/008.txt  [AD-ICICIT-S]
+You have successfully linked Account XX391 to KIRAN JOSHI on iMobile. As per NPCI guidelines, your total transaction limit is Rs3184 for 24 hours.-ICICI Bank
+
+--- MAHABK/009.txt  [BT-MAHABK-S]
+Your account has been successfully debited with Rs 6.41 on 29-Jul-25 towards Google for GOOGLE AutoPay, RRN 111070434192-Bank of Maharashtra
+
+--- MAHABK/010.txt  [AX-MAHABK-S]
+Your account has been successfully debited with Rs 6.41 on 17-Jul-25 towards Google Play for UPI Mandate AutoPay, RRN 324824475771-Bank of Maharashtra
+
+--- ICICIT/011.txt  [AD-ICICIT-S]
+ICICI Bank Acct XX391 debited for Rs 660.42 on 30-Sep-26; NEHA SHARMA credited. UPI:496030620278. Call 18002662 for dispute. SMS BLOCK 948 to 7838738069.
+
+--- MAHABK/012.txt  [JD-MAHABK-S]
+A/c X8869 debited by Rs. 474.06 for UPI payment to Amit Verma K on 30-May-26. RRN: 404114426942 if not you, call 18093972980 -Bank of Maharashtra
+
+--- MAHABK/013.txt  [AD-MAHABK-T]
+Your a/c xxxx 8869 has been credited by INR 264.87 on 16-SEP-2026 by UPI_13092026_662242740870_RET_A7351396937. A/c Bal is INR 15,964.02 CR and AVL Bal is INR 15,964.02-Bank of Maharashtra
+
+--- MAHABK/014.txt  [JM-MAHABK-T]
+Your A/c No xxxx8869 has been credited by Rs. 243.97 on 03-SEP-2026 GLUE6634168 NEFT MXTRT41012228345984555 SHRI SANT GAJANAN MAHA. A/c Bal is Rs. 39,815.06CR and AVL Bal is Rs.39,815.06-Bank of Maharashtra
+
+--- MAHABK/015.txt  [AX-MAHABK-S]
+Your AutoPay mandate with ASPRESENTED is successfully created towards OpenAI LLC from 04-Nov-25 to 02-Nov-35 for Rs 491.45, RRN 262251996198-Bank of Maharashtra
+
+--- ICICIT/016.txt  [AD-ICICIT-S]
+Dear Customer, Acct XX391 is credited with Rs 261.03 on 02-Oct-26 from PRIYA NAIR. UPI:598174104090-ICICI Bank.
+
+--- MAHABK/017.txt  [JD-MAHABK-S]
+Dear customer, A hold of INR          49621.723 has been applied on your A/C XXXXXXX7435Due to Sandeep Gaikwad     11-UPI            For queries,contact your Home Branch-Bank of Maharashtra.
+
+--- MAHABK/018.txt  [JD-MAHABK-S]
+ASBA lien of Rs. 31,668.48 has been applied in your account No:xxxx7435  at 30-09-2026 02:09:45 -Bank of Maharashtra
+
+--- MAHABK/019.txt  [AD-MAHABK-S]
+Dear Customer, the mandate of INR 86561.15 raised by MEERA IYER on 02-Oct-26 and is revoked through RRN 575135000495-Bank of Maharashtra
+
+--- MAHABK/020.txt  [VA-MAHABK-S]
+BOM Acct xx 8869 debited by INR 814.39 on 16-SEP-2026. AVL Bal INR 97,542.83 .  -Bank of Maharashtra
+
+--- ICICIT/021.txt  [AD-ICICIT-S]
+ICICI Bank Acct XX391 debited for Rs 74.05 on 04-Oct-26; Rajesh Pawar  credited. UPI:533514171953. Call 18002662 for dispute. SMS BLOCK 948 to 7838738069.
+
+--- MAHABK/022.txt  [JM-MAHABK-S]
+A/c X8869 credited with Rs. 4303.61 on 30-Sep-26 from FATIMA SHAIKH RRN: 359435189991 -Bank of Maharashtra
+
+--- MAHABK/023.txt  [AD-MAHABK-S]
+A/c X8869 debited by Rs. 4303.61 for UPI payment to 3185182222 supe on 30-Sep-26. RRN: 641894232805 if not you, call 93246820341 -Bank of Maharashtra
+
+--- MAHABK/024.txt  [AD-MAHABK-T]
+Your a/c xxxx 8869 has been credited by INR 722.83 on 18-MAR-2026 by APB Credit Through PFMS  X868487870652. A/c Bal is INR 5,706.90 CR and AVL Bal is INR 5,706.90-Bank of Maharashtra
+
+--- MAHABK/025.txt  [VM-MAHABK-S]
+Your A/c No xx 8869  has been credited by INR 3.91 on 09-FEB-2026 by MOHD IRFAN S 159292244696 from SUNITA PATIL. A/c Bal is INR 4,702.85 CR and AVL Bal INR 4,702.85-Bank of Maharashtra
+
+--- ICICIT/026.txt  [AD-ICICIT-S]
+Per day cooling period limit for UPI transactions is Rs 3184 via WA for 72 hours after new user registration-ICICI Bank
+
+--- MAHABK/027.txt  [AX-MAHABK-S]
+Your account has been successfully debited with Rs 6.41 on 17-Jul-25 towards Google for GOOGLE AutoPay, RRN 973357736589-Bank of Maharashtra
+
+--- MAHABK/028.txt  [AX-MAHABK-S]
+Your account has been successfully debited with Rs 6.41 on 17-Jul-25 towards Google Play for UPI Mandate AutoPay, RRN 530185283444-Bank of Maharashtra
+
+--- ICICIT/029.txt  [AD-ICICIT-S]
+ICICI Bank Acct XX391 debited for Rs 474.06 on 30-Sep-26; NEHA SHARMA credited. UPI:952791198962. Call 18002662 for dispute. SMS BLOCK 948 to 7838738069.
+
+--- MAHABK/030.txt  [AD-MAHABK-S]
+A/c X8869 debited by Rs. 814.39 for UPI payment to NEHA SHARMA on 07-Mar-26. RRN: 346390765682 if not you, call 18093972980 -Bank of Maharashtra
+
+--- MAHABK/031.txt  [VA-MAHABK-T]
+BOM Acct xx 8869 credited by INR 908.14 on 11-SEP-2026 . AVL Bal INR 24,129.17 Feedback https://example.invalid/x  -Bank Of Maharashtra
+
+--- MAHABK/032.txt  [VM-MAHABK-T]
+Your A/c No xxxx8869 has been credited by Rs. 34,283.44 on 31-AUG-2026 HNPN3572973 NEFT DPVTP24436803879009343 HCL TECH LUCKNOW-SALAR. A/c Bal is Rs. 57,285.76CR and AVL Bal is Rs.57,285.76-Bank of Maharashtra
+
+--- MAHABK/033.txt  [BT-MAHABK-S]
+Your AutoPay mandate with ASPRESENTED is successfully created towards Google from 29-Jul-25 to 31-Dec-35 for Rs 5218.59, RRN 239634101908-Bank of Maharashtra
+
+--- ICICIT/034.txt  [AD-ICICIT-S]
+Dear Customer, Acct XX391 is credited with Rs 4303.61 on 30-Sep-26 from Vikram Singh R. UPI:641894232805-ICICI Bank.
+
+--- MAHABK/035.txt  [JD-MAHABK-S]
+Dear customer, A hold of INR          56858.501 has been applied on your A/C XXXXXXX7435Due to Sandeep Gaikwad     11-UPI            For queries,contact your Home Branch-Bank of Maharashtra.
+
+--- MAHABK/036.txt  [JM-MAHABK-S]
+ASBA lien of Rs. 87,548.65 has been applied in your account No:xxxx7435  at 29-09-2026 02:09:06 -Bank of Maharashtra
+
+--- MAHABK/037.txt  [AD-MAHABK-S]
+Dear Customer, the mandate of INR 96427.98 raised by Pooja Kulkarni on 01-Oct-26 and is revoked through RRN 816638049837-Bank of Maharashtra
+
+--- MAHABK/038.txt  [VA-MAHABK-S]
+BOM Acct xx 8869 debited by INR 45.80 on 08-SEP-2026. AVL Bal INR79,665.99 .  -Bank of Maharashtra
+
+--- ICICIT/039.txt  [AD-ICICIT-S]
+ICICI Bank Acct XX391 debited for Rs 74.05 on 04-Oct-26; ARJUN REDDY credited. UPI:273406264219. Call 18002662 for dispute. SMS BLOCK 948 to 7838738069.
+
+--- MAHABK/040.txt  [JM-MAHABK-S]
+A/c X8869 credited with Rs. 904.81 on 29-Sep-26 from FATIMA SHAIKH RRN: 154684274727 -Bank of Maharashtra
+
+--- MAHABK/041.txt  [JK-MAHABK-S]
+A/c X8869 debited by Rs. 53833.54 for UPI payment to SMITA BHOSALE on 28-Sep-26. RRN: 715170282164 if not you, call 93246820341 -Bank of Maharashtra
+
+--- ICICIT/042.txt  [AX-ICICIT-S]
+ICICI Bank Acct XX391 debited for Rs 474.06 on 28-Aug-26; NEHA SHARMA credited. UPI:218578802484. Call 18002662 for dispute. SMS BLOCK 948 to 7838738069.
+
+--- MAHABK/043.txt  [VA-MAHABK-S]
+A/c X8869 debited by Rs. 5930.96 for UPI payment to Amit Verma K on 22-Feb-26. RRN: 693686274953 if not you, call 18093972980 -Bank of Maharashtra
+
+--- MAHABK/044.txt  [AD-MAHABK-T]
+Your a/c xxxx 8869 has been credited by INR 394.78 on 30-AUG-2026 by UPI_05082026_658369768997_RET_A6634312979. A/c Bal is INR 32,275.46 CR and AVL Bal is INR 32,275.46-Bank of Maharashtra
+
+--- MAHABK/045.txt  [JD-MAHABK-T]
+Your A/c No xxxx8869 has been credited by Rs. 85,419.21 on 31-JUL-2026 HNPN3572973 NEFT HDYGY51136571200903078 HCL TECH LUCKNOW-SALAR. A/c Bal is Rs. 46,377.62CR and AVL Bal is Rs.46,377.62-Bank of Maharashtra
+
+--- MAHABK/046.txt  [BG-MAHABK-S]
+Dear Customer, your AutoPay mandate is successfully revoked towards Google for Rs 5218.59, RRN 434789637457-Bank of Maharashtra
+
+--- ICICIT/047.txt  [AD-ICICIT-S]
+Dear Customer, Acct XX391 is credited with Rs 7220.06 on 26-Sep-26 from HARISH MEHTA. UPI:231000756943-ICICI Bank.
+
+--- MAHABK/048.txt  [JX-MAHABK-S]
+Dear customer, A hold of INR          38096.421 has been applied on your A/C XXXXXXX7435Due to Sandeep Gaikwad     11-UPI            For queries,contact your Home Branch-Bank of Maharashtra.
+
+--- MAHABK/049.txt  [AX-MAHABK-S]
+ASBA lien of Rs. 84,008.08 has been applied in your account No:xxxx7435  at 28-09-2026 11:09:21 -Bank of Maharashtra
+
+--- MAHABK/050.txt  [JM-MAHABK-S]
+Dear Customer, the mandate of INR 86544.33 raised by LATA CHAVAN on 30-Sep-26 and is revoked through RRN 304161307243-Bank of Maharashtra
+
+--- MAHABK/051.txt  [AD-MAHABK-S]
+BOM Acct xx 8869 debited by INR 474.06 on 07-SEP-2026. AVL Bal INR19,925.69 .  -Bank of Maharashtra
+
+--- ICICIT/052.txt  [AX-ICICIT-S]
+ICICI Bank Acct XX391 debited for Rs 24.21 on 04-Oct-26; Deepak Yadav credited. UPI:980586838614. Call 18002662 for dispute. SMS BLOCK 948 to 7838738069.
+
+--- MAHABK/053.txt  [VM-MAHABK-S]
+A/c X8869 credited with Rs. 6028.07 on 29-Sep-26 from FATIMA SHAIKH RRN: 303600187851 -Bank of Maharashtra
+
+--- MAHABK/054.txt  [JD-MAHABK-S]
+A/c X8869 debited by Rs. 704.52 for UPI payment to Rohini More on 24-Sep-26. RRN: 367084145140 if not you, call 93246820341 -Bank of Maharashtra
+
+

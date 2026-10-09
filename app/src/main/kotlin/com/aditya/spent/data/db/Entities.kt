@@ -31,7 +31,7 @@ data class CategoryEntity(
         ForeignKey(entity = AccountEntity::class, parentColumns = ["id"], childColumns = ["destinationAccountId"], onDelete = ForeignKey.RESTRICT),
         ForeignKey(entity = CategoryEntity::class, parentColumns = ["id"], childColumns = ["categoryId"], onDelete = ForeignKey.RESTRICT),
     ],
-    indices = [Index(value = ["accountId", "referenceNumber"]), Index(value = ["accountId", "timestampMillis"]), Index(value = ["destinationAccountId"]), Index(value = ["categoryId"])],
+    indices = [Index(value = ["accountId", "referenceNumber"]), Index(value = ["accountId", "timestampMillis"]), Index(value = ["destinationAccountId"]), Index(value = ["categoryId"]), Index(value = ["transferId"])],
 )
 data class TransactionEntity(
     @PrimaryKey val id: String,
@@ -46,4 +46,9 @@ data class TransactionEntity(
     val note: String?,
     val source: String,
     val originalSmsId: String?,
+    val balanceAfterPaise: Long?,
+    val senderHeader: String?,
+    val smsHash: String?,
+    val needsReview: Boolean,
+    val transferId: String?,
 )

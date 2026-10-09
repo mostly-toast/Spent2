@@ -14,6 +14,7 @@ import com.aditya.spent.usecase.TransactionBalanceAdjustments
 class AppContainer(context: Context) {
     private val database = Room.databaseBuilder(context, SpentDatabase::class.java, "spent.db")
         .addCallback(SpentDatabase.callback)
+        .addMigrations(SpentDatabase.MIGRATION_1_2)
         .build()
     val accountRepository: AccountRepository = RoomAccountRepository(database, database.accountDao(), database.transactionDao())
     val categoryRepository: CategoryRepository = RoomCategoryRepository(database.categoryDao())

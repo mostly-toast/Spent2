@@ -63,6 +63,15 @@ class RoomTransactionRepository(
 ) : TransactionRepository {
     override fun observeTransactions(): Flow<List<Transaction>> = transactions.observeAll().map { it.map { entity -> entity.toModel() } }
     override suspend fun getTransaction(id: String): Transaction? = transactions.get(id)?.toModel()
+    override suspend fun findBySmsHash(smsHash: String): Transaction? = transactions.findBySmsHash(smsHash)?.toModel()
+    override suspend fun findByReference(accountId: String, referenceNumber: String): Transaction? = transactions.findByReference(accountId, referenceNumber)?.toModel()
+    override suspend fun findByAccountAmountAndWindow(
+        accountId: String,
+        type: TransactionType,
+        amountPaise: Long,
+        fromMillis: Long,
+        toMillis: Long,
+    ): List<Transaction> = transactions.findByAccountAmountAndWindow(accountId, type.name, amountPaise, fromMillis, toMillis).map { it.toModel() }
     override suspend fun add(transaction: Transaction): Result<Unit> = runCatching {
         database.withTransaction {
             validateCategory(transaction)
@@ -84,6 +93,23 @@ class RoomTransactionRepository(
             val previous = requireNotNull(transactions.get(id)) { "Transaction not found" }.toModel()
             apply(balanceAdjustments(previous).map { it.copy(deltaPaise = -it.deltaPaise) })
             transactions.delete(id)
+        }
+    }
+    override suspend fun markNeedsReview(id: String): Result<Unit> = runCatching {
+        transactions.markNeedsReview(id)
+    }
+    override suspend fun saveTransfer(newLeg: Transaction, existingLeg: Transaction?, transfer: Transaction): Result<Unit> = runCatching {
+        database.withTransaction {
+            require(transfer.type == TransactionType.TRANSFER) { "Not a transfer" }
+            require(newLeg.transferId == null && existingLeg?.transferId == null) { "Leg is already part of a transfer" }
+            require(newLeg.id != transfer.id) { "Transfer and leg must differ" }
+            if (existingLeg != null) {
+                require(existingLeg.id != newLeg.id) { "Legs must differ" }
+                transactions.linkToTransfer(listOf(existingLeg.id), transfer.id)
+            }
+            require(accounts.adjustBalance(newLeg.accountId, balanceAdjustments(newLeg).single().deltaPaise) == 1) { "Account not found" }
+            transactions.insert(newLeg.copy(transferId = transfer.id).toEntity())
+            transactions.insert(transfer.toEntity())
         }
     }
     private suspend fun apply(adjustments: List<BalanceAdjustment>) {

@@ -30,7 +30,13 @@ Read `SPEC.md`, `ARCHITECTURE.md` and `DECISIONS.md` before any task. `ROADMAP.m
 - Keep diffs small. No drive-by refactors, renames or formatting changes.
 - Every piece of logic in `:core` ships with unit tests.
 - SMS fixtures must be anonymized: invented names, numbers and reference IDs only.
+- Files under `core/src/test/resources/sms/` are read-only. Never edit them, and never create fixture text from memory.
+- Never read `~/sms_private`, never run `adb`, and never ask for real SMS. If you need more samples, say so and stop.
+- Keep the parser behind the `TransactionExtractor` interface so another implementation can be added later.
 - Do not run `git commit` or `git push` unless asked.
+- **Never change a test's expected values or fixture text to make it pass.** Fix the code. If you think the fixture or the spec is wrong, stop and ask.
+- **Never invent data** (for example padding missing digits) to satisfy a model constraint. Report the conflict and stop.
+- If the same test still fails after two attempts, stop and report what you tried. Do not keep looping.
 
 ## Verify before saying "done"
 Run, and fix failures:

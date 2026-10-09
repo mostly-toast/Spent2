@@ -2,15 +2,27 @@ package com.aditya.spent.data.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [AccountEntity::class, CategoryEntity::class, TransactionEntity::class], version = 1, exportSchema = true)
+@Database(entities = [AccountEntity::class, CategoryEntity::class, TransactionEntity::class], version = 2, exportSchema = true)
 abstract class SpentDatabase : RoomDatabase() {
     abstract fun accountDao(): AccountDao
     abstract fun categoryDao(): CategoryDao
     abstract fun transactionDao(): TransactionDao
 
     companion object {
+        val MIGRATION_1_2 = object : Migration(1, 2) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE transactions ADD COLUMN balanceAfterPaise INTEGER")
+                db.execSQL("ALTER TABLE transactions ADD COLUMN senderHeader TEXT")
+                db.execSQL("ALTER TABLE transactions ADD COLUMN smsHash TEXT")
+                db.execSQL("ALTER TABLE transactions ADD COLUMN needsReview INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE transactions ADD COLUMN transferId TEXT")
+                db.execSQL("CREATE INDEX IF NOT EXISTS index_transactions_transferId ON transactions (transferId)")
+            }
+        }
+
         val callback = object : Callback() {
             override fun onCreate(db: SupportSQLiteDatabase) {
                 super.onCreate(db)
